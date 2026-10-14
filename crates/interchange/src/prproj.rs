@@ -14,8 +14,8 @@ use roxmltree::{Document, Node};
 use crate::common::{Builder, MediaSpec, empty_sequence, file_name, kind_from_ext, media_clip, media_info, resolve_path};
 use crate::{Error, ImportOptions, Imported, Report, Result};
 
-const MAX_XML_BYTES: usize = 64 * 1024 * 1024;
-const MAX_OBJECTS: usize = 250_000;
+const MAX_XML_BYTES: usize = 256 * 1024 * 1024;
+const MAX_OBJECTS: usize = 5_000_000;
 
 /// Import the historical gzip-wrapped PremiereData XML representation.
 pub fn import(bytes: &[u8], opts: &ImportOptions) -> Result<(Imported, Report)> {
